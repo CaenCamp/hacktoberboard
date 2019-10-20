@@ -82,8 +82,10 @@ module.exports = async ({
     }),
   });
 
-
   if (false === response.ok) {
+    if (verbose) {
+      console.log('Response KO', response);
+    }
     return;
   }
 
