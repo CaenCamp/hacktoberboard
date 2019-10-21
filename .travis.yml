@@ -1,20 +1,19 @@
 language: node_js
-env:
-  global:
-  - secure: gYuB0FitL64MlBzLHECeTBXkY9Mv9BgaCQdQ44YREa3PvJXAQl0mX34cgIYMXKcJwzjYajQBpmuVMNmajLFwAjAVVMmE9aupNsYa1his9BMqblrDHZCFVwOTb4WsWPGnI7kzVwzrvYxTEp86V2MwLCl1ezwKmB23o95zLtdUA+EQcNUpEVtUD7OQ1MXw2rd2/c5bzok+/tOgk43yqX9iqtlHy7Nrt2BBP9NDl0w2zqD1lBoaHqQsSkwmXAYO/xVIwQ3rAGPKFQGdrMs0TMO0VBV5+Oldv9NB01sUBcymZnLqxnRbRa2ijfDrfu7Y706ncMNCfMoJpuyW28h8ZIKNmPoRNKIEUHwSFl8wRcjfPW7mvw3YL5YJnS84jtf4R8EItneKeyrVCX4LBlULjETW/NR41mxEIIxCN+pA7jzmlSowA2TziTwmiGL+yD9L9qDaf83Uag3884YI6/H0YTevCsJ0Obe7lVxaPZafweT9ZQaDnQQfrQ/KfhgVDSsf92VgMgM4DYNqziCa5+fNXQLyH0APpzFtPF/fhs1szrNOKu0KAzTIg1JZFLK6LvlHNICDFo0YaZWEen4UkBIdRKwFIJ2+CfHxGyNQ/Y1Ho4l0ldYOewf3voFVi7fIN+QOZByt0yP/RUKhHtyuKA2d8f2OdXAzbyEIDInKXLfIxdh98rQ=
-  - secure: j05fpzVk1HYRTBvgB16Okn55IM6fs5MQgZhqkD1U7P0NKDjhfmsxgr5qUgALlpTlsCMPnddCMDodnfzG0dvRzOxoyeIGFHoQGqMLse9Ri6/OKW/zHmxyVAUSQILT44FSCr4AwdexZsSGfTbJud78tK38F3CBZD7q2lQ14gotDLiAlhnFJY31euoWviLsm4QLRExIRXRec0feuk1D/t6f52FmZpbxoQ6AXvMJLWkdrPAXX9pxtntXOYtDLkEI1jhYU6l+D84Tj0ayPRiVJIVl3v9Qq50H8j64hcZ3ONCUZi22rxklKNOjl7FKtmqK8utgLwL33+eQoPTzSNI4/aokryCBbbJQ3E/iDZfaV+04WKALsDH38aa9a2TVGPHhNbCaPp4AUGXteBjCRmjoU945mU3o1eu9rhV7+Yx3Q687OQCGi8Q+adaeDQvXRZTJfOUxuhGUMaqEenkpBIXs37hl93UFjm/CgxRZ2Hcr7WtPmbIGm6Bao4+ky1AEykTXAgOgx2TfmeJBk1/KeMzMABSpAkiqqoJ24FnWKmv9amWO6yqB481ECcR8+8KnVK8fE3ujQGibikt2eqkr6wpKMdG7EazDyJamj+/PliAgRJsJLmk6+fAAKVd2To4LxqkwS7OfVm9aGOjBmDuZBTUrAQTf8NezZEP81J8QwY8cv03nUow=
+
 cache:
   directories:
   - node_modules
+
 script:
 - npm run build
 - npm test
+
 jobs:
   include:
   - stage: github page
     if: "(type != pull_request) AND (branch = master)"
     script: npm run build
-    node_js: '12'
+    node_js: 'stable'
     deploy:
       provider: pages
       skip_cleanup: true
