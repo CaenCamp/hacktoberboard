@@ -14,6 +14,6 @@ Board to follow Hacktoberfest participation
    export GITHUB_API_LOGIN="yourLogin"
    export GITHUB_API_TOKEN="yourToken"
    export GITHUB_ORG="yourOrg"
-   export GITHUB_ORg_TEAM="yourOrgTeam"
+   export GITHUB_ORG_TEAM="yourOrgTeam"
    ```
 5. Start to dev `npm run start`
